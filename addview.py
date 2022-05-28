@@ -1,6 +1,6 @@
 import requests
 
-print("Add viewcount for github profile via multi HTTP requests")
+print("Increase github profile views via multi HTTP requests")
 
 print("Use: ![](https://visitcount.itsvg.in/api?id=yourusername) on README.md")
 
