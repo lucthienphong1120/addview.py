@@ -1,27 +1,30 @@
 import requests
 
-print("Increase github profile views via multi HTTP requests")
+def addview(usr, num):
 
-print("Use: ![](https://visitcount.itsvg.in/api?id=yourusername) on README.md")
+	url = 'https://visitcount.itsvg.in/api?id=' + usr
 
-print()
+	for i in range(1, int(num) + 1): 
+		req = requests.get(url)
+		print("[+] Done " + str(i) + " requests!")
 
-usr = input("Your Github username: ")
+def usage():
+	print("Increase github profile views via multi HTTP requests")
+	print("Use: ![](https://visitcount.itsvg.in/api?id=yourusername) on README.md")
+	print()
 
-# default for me
-if usr == '':
-	usr = 'lucthienphong1120'
+if __name__ == "__main__":
+	usage()
 
-num = input("Number of views to add: ")
+	usr = input("Your Github username: ")
 
-# default is 10 requests
-if num == '':
-	num = 10
+	if requests.get('https://github.com/' + usr).status_code == 404:
+		print("Username not found!")
+		exit()
 
-print()
+	num = input("Number of views to increase (default=10): ")
 
-url = 'https://visitcount.itsvg.in/api?id=' + usr
+	if num == '':
+		num = 10
 
-for i in range(1, int(num) + 1): 
-	req = requests.get(url)
-	print("[+] Done " + str(i) + " requests!")
+	addview(usr, num)
