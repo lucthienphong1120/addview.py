@@ -12,7 +12,7 @@ Use this on your README.md
 
 Repo: [Visit Count Pro (VishwaGauravIn)](https://github.com/VishwaGauravIn/visit-count-pro)
 
-## Usgae
+## Usage
 
 ```
 pip install requests
